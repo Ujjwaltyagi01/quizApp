@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+*{
+    color: aliceblue;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app{
+    width: 100vw;
+    height: 100vh;
+    background-color: #020230;
+    display: flex;
+   
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.main{
+    width: 75%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230),  url("./assets/bg.jpg") center;
+    display: flex;
+    flex-direction: column;
+}
+.top{
+    height: 50%;
+    position: relative;
+}
+.timer{
+    width: 65px;
+    height: 65px;
+    border: 6px solid whitesmoke;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 30px;
+    font-weight: 800;
+    position: absolute;
+    bottom: 13px;
+    left: 75px;
+}
+.bottom{
+    height: 50%;
+}
+.pyramid{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.moneyList {
+    padding: 20px;
+    list-style: none;
+    width: 100%;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .moneyListItem {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
   }
-  to {
-    transform: rotate(360deg);
+  .moneyListItemNumber {
+    width: 30%;
+    font-size: 18px;
+    font-weight: 100;
   }
-}
+  
+  .moneyListItemAmount {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .moneyListItem.active {
+    background-color: teal;
+  }
+  .trivia{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .questions{
+    width: 80%;
+    background: linear-gradient(#100242,black);
+    border: 2px solid wheat;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 20px;
+    padding: 24px;
+  }
+  .answer{
+    width: 34%;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    background: linear-gradient(#2f1b74,rgb(71, 30, 30));
+    border: 1px solid white;
+    font-size: 20px;
+    border-radius: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    margin: 0 18px 20px 18px;
+  }
+  .answers{
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    /* text-align: center; */
+    /* text-align: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .answer:hover{
+    background: mediumblue;
+  }
+  .active{
+    background: mediumblue;
+  }
+  .answer.correct{
+    animation: correct 3s ease forwards;
+  }
+  @keyframes correct {
+    0%,22%,45%{
+        background: mediumblue;
+    }
+    20%,33%,58%{
+        background: linear-gradient(#2f1b74,rgb(71, 30, 30));
+    }
+    60%,100%{
+
+        background: green;
+    }
+  }
+  .answer.wrong{
+    animation: wrong 3s ease forwards;
+  }
+  @keyframes wrong {
+    0%,22%,45%{
+        background: mediumblue;
+    }
+    20%,33%,58%{
+        background: linear-gradient(#2f1b74,rgb(71, 30, 30));
+    }
+    60%,100%{
+
+        background: red;
+    }
+  }
+  .endText{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .start{
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    justify-content: space-around;
+    color: #2f1b74;
+  }
+  .startInput{
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    color: #2f1b74;
+    font-weight: 500;
+  }
+  .startInput:focus{
+    outline: none;
+  }
+  .startButton{
+    width: 100%;
+    height: 30px;
+    border: 2px solid red;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: black;
+  }
